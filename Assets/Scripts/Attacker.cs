@@ -5,9 +5,8 @@ using UnityEngine;
 public class Attacker : MonoBehaviour
 {
     [Range(0.1f, 3.0f)]
-    [SerializeField] float speed = 1.0f;  
-    [Range(0.5f, 1.5f)]
-    [SerializeField] float defaultAnimationSpeed = 1.13f;
+    float speed = 0.0f;  
+
 
     
 
@@ -22,6 +21,10 @@ public class Attacker : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
-        animator.speed = defaultAnimationSpeed * speed;
+    }
+
+    void SetMovementSpeed(float value)
+    {
+        speed = value;
     }
 }
