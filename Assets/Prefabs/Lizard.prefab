@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathSFX: {fileID: 8300000, guid: 21ed8aaffb30ddf448fad35189190797, type: 3}
+  deathVFXPrefab: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5,
+    type: 3}
 --- !u!70 &459591265
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

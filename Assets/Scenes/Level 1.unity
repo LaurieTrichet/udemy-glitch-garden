@@ -231,11 +231,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lizard
       objectReference: {fileID: 0}
-    - target: {fileID: 2017484490050635609, guid: f07d66ebbbe4fb644aa6ca20e68d9c0f,
-        type: 3}
-      propertyPath: deathSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 21ed8aaffb30ddf448fad35189190797, type: 3}
     - target: {fileID: 2017484490050635610, guid: f07d66ebbbe4fb644aa6ca20e68d9c0f,
         type: 3}
       propertyPath: m_LocalPosition.x
