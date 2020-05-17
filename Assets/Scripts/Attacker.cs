@@ -5,16 +5,16 @@ using UnityEngine;
 public class Attacker : MonoBehaviour
 {
     [Range(0.1f, 3.0f)]
-    float speed = 0.0f;  
+    float speed = 0.0f;
 
+    [SerializeField] AudioClip deathSFX = null;
 
-    
-
-    private Animator animator = null;
+    private HealthSystem healthSystem = null;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.hasDied = this.OnHasDied;
     }
 
     // Update is called once per frame
@@ -26,5 +26,10 @@ public class Attacker : MonoBehaviour
     void SetMovementSpeed(float value)
     {
         speed = value;
+    }
+
+    void OnHasDied()
+    {
+        AudioSource.PlayClipAtPoint(deathSFX, gameObject.transform.position);
     }
 }
