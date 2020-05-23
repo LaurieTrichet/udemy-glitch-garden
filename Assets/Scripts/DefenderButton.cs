@@ -9,6 +9,11 @@ public class DefenderButton : MonoBehaviour
     private DefenderButton[] siblings = null;
     private List<SpriteRenderer> siblingRenderers = null;
     private Color color;
+
+
+
+    [SerializeField] DefenderSpawner defenderSpawner = null;
+    [SerializeField] GameObject defenderPrefab = null;
     void Start()
     {
         siblings = FindObjectsOfType<DefenderButton>();
@@ -22,5 +27,12 @@ public class DefenderButton : MonoBehaviour
         siblingRenderers.ForEach(siblingRenderer => siblingRenderer.color = color);
 
         spriteRenderer.color = Color.white;
+
+        SelectDefender();
+    }
+
+    private void SelectDefender()
+    {
+        defenderSpawner.SetDefenderPrefab(defenderPrefab);
     }
 }
