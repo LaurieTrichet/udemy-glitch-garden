@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class StarGenerator : MonoBehaviour
 {
-    private const int Seconds = 2;
     private StarDisplay starDisplay = null;
-    [SerializeField] bool isRunning = true;
     [SerializeField] int resource = 2;
 
     
@@ -14,21 +12,9 @@ public class StarGenerator : MonoBehaviour
     void Start()
     {
         starDisplay = FindObjectOfType<StarDisplay>();
-        StartCoroutine(GenerateCoroutine());
     }
 
-
-    IEnumerator GenerateCoroutine()
-    {
-        while (isRunning)
-        {
-            yield return new WaitForSeconds(Seconds);
-            Generate();
-        }
-    }
-
-
-    private void Generate()
+    public void Generate()
     {
         starDisplay.Add(resource);
     }
