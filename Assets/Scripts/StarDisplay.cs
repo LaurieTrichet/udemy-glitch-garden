@@ -35,4 +35,14 @@ public class StarDisplay : MonoBehaviour
     {
         startCountText.text = currentResources.ToString();
     }
+
+    public bool CanPurchase(int cost)
+    {
+        return CurrentResources >= cost;
+    }
+
+    public void MakePurchase(int cost)
+    {
+        Substract(cost);
+    }
 }

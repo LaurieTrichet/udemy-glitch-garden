@@ -28,16 +28,12 @@ public class DefenderSpawner : MonoBehaviour
 
         if (defenderPrefab == null) { return; }
         var cost = GetCostForDefender();
-        var canPurchase = starDisplay.CurrentResources >= cost;
-        if (canPurchase)
+        if (starDisplay.CanPurchase(cost))
         {
-            MakePurchase(cost);
+            starDisplay.MakePurchase(cost);
             Instantiate(defenderPrefab, position, transform.rotation);
         }
     }
 
-    private void MakePurchase(int cost)
-    {
-        starDisplay.Substract(cost);
-    }
+    
 }
