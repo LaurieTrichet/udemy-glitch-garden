@@ -31,7 +31,10 @@ public class DefenderSpawner : MonoBehaviour
         if (starDisplay.CanPurchase(cost))
         {
             starDisplay.MakePurchase(cost);
-            Instantiate(defenderPrefab, position, transform.rotation);
+           
+            var defenderGameObject = Instantiate(defenderPrefab, position, transform.rotation);
+            var defender = defenderGameObject.GetComponent<Defender>();
+            defender.Line = Mathf.RoundToInt(position.y)+1;
         }
     }
 

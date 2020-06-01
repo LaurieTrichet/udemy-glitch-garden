@@ -13,6 +13,8 @@ public class AttackerSpawner : MonoBehaviour
     [SerializeField] GameObject prefab = null;
     [SerializeField] int line = 0;
 
+    public int Line { get => line; set => line = value; }
+
     IEnumerator Start()
     {
         while (shouldSpawn)
@@ -24,13 +26,8 @@ public class AttackerSpawner : MonoBehaviour
 
     private void Spawn()
     {
-        var attacker = Instantiate(prefab, transform.position, transform.rotation);
+        var attacker = Instantiate(prefab, transform.position, transform.rotation, transform);
         attacker.tag = line.ToString() ; 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

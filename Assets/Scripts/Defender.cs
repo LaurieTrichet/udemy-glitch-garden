@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Defender : MonoBehaviour
 {
-
+    private int line = 0;
     [SerializeField] int cost = 0;
 
     public int Cost { get => cost; set => cost = value; }
+    public int Line { get => line; set => line = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -21,3 +22,4 @@ public class Defender : MonoBehaviour
         
     }
 }
+
