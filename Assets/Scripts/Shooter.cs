@@ -10,12 +10,14 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject projectilePrefab = null;
     [SerializeField] GameObject projectileLauncher = null;
     [SerializeField] AttackerSpawner attackerSpawner = null;
+    private Animator animator = null;
     [SerializeField] int line = 0;
     private bool shouldShoot = false;
 
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         SetAttackerSpawmer();
     }
 
@@ -39,6 +41,7 @@ public class Shooter : MonoBehaviour
     private void Update()
     {
         shouldShoot = IfAttackerInLane();
+        animator.SetBool("shouldShoot", shouldShoot);
     }
 
     private bool IfAttackerInLane()
