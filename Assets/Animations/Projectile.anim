@@ -20,20 +20,20 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: {x: 0, y: 0, z: 0}
-        inSlope: {x: 0, y: 0, z: -473.71378}
-        outSlope: {x: 0, y: 0, z: -473.71378}
+        inSlope: {x: 0, y: 0, z: -3451.7876}
+        outSlope: {x: 0, y: 0, z: -3451.7876}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 1}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.17340522}
       - serializedVersion: 3
         time: 1
         value: {x: 0, y: 0, z: -359}
-        inSlope: {x: 0, y: 0, z: -345.19888}
-        outSlope: {x: 0, y: 0, z: -345.19888}
+        inSlope: {x: 0, y: 0, z: 281.97043}
+        outSlope: {x: 0, y: 0, z: 281.97043}
         tangentMode: 0
         weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 1}
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.09689611}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -49,14 +49,7 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 2073732236
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
-      isPPtrCurve: 0
+    genericBindings: []
     pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -141,20 +134,20 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: -473.71378
-        outSlope: -473.71378
+        inSlope: -3451.7876
+        outSlope: -3451.7876
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 1
+        outWeight: 0.17340522
       - serializedVersion: 3
         time: 1
         value: -359
-        inSlope: -345.19888
-        outSlope: -345.19888
+        inSlope: 281.97043
+        outSlope: 281.97043
         tangentMode: 0
         weightedMode: 0
-        inWeight: 1
+        inWeight: 0.09689611
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
