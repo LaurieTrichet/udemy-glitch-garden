@@ -8,6 +8,7 @@ public class DefenderSpawner : MonoBehaviour
 
     [SerializeField] GameObject defenderPrefab = null;
     [SerializeField] StarDisplay starDisplay = null;
+    private GameObject[,] grid = new GameObject[6, 5];
 
     void Start()
     {
@@ -28,13 +29,16 @@ public class DefenderSpawner : MonoBehaviour
 
         if (defenderPrefab == null) { return; }
         var cost = GetCostForDefender();
-        if (starDisplay.CanPurchase(cost))
+        bool isSpaceFree = grid[(int)position.x, (int)position.y] == null;
+        if (starDisplay.CanPurchase(cost) && isSpaceFree)
         {
             starDisplay.MakePurchase(cost);
            
             var defenderGameObject = Instantiate(defenderPrefab, position, transform.rotation);
             var defender = defenderGameObject.GetComponent<Defender>();
             defender.Line = Mathf.RoundToInt(position.y)+1;
+
+            grid[(int)position.x, (int)position.y] = defenderGameObject;
         }
     }
 
