@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -13,17 +15,17 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    public Action hasDied = null;
-    public Action healthHasChanged = null;
+    public List<Action> hasDiedList = new List<Action>();
+    public List<Action> healthHasChangedList = new List<Action>();
 
     public void HandleHit(int damage)
     {
         ComputeNewHealth(damage);
 
-        healthHasChanged?.Invoke();
+        healthHasChangedList.ForEach(healthHasChanged => healthHasChanged.Invoke());
         if (health <= 0)
         {
-            hasDied?.Invoke();
+            hasDiedList.ForEach(healthHasChanged => healthHasChanged.Invoke());
             Destroy(gameObject);
         }
     }

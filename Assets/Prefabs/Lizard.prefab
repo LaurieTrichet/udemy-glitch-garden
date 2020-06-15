@@ -70,6 +70,8 @@ MonoBehaviour:
   deathSFX: {fileID: 8300000, guid: 21ed8aaffb30ddf448fad35189190797, type: 3}
   deathVFXPrefab: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5,
     type: 3}
+  damage: 10
+  delayBetweenAttacks: 1
 --- !u!70 &459591265
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -83,8 +85,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5359957, y: -0.3130448}
-  m_Size: {x: 0.8499646, y: 1.1439869}
+  m_Offset: {x: -0.5, y: -0.27}
+  m_Size: {x: 0.8499646, y: 0.9811919}
   m_Direction: 0
 --- !u!114 &459591264
 MonoBehaviour:

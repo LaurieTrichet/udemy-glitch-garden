@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 8093643497515466054}
   - component: {fileID: 5160237327413359993}
   - component: {fileID: 9212159515731649547}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Zucchini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4.18
-  damage: 100
+  damage: 50
 --- !u!95 &5160237327413359993
 Animator:
   serializedVersion: 3

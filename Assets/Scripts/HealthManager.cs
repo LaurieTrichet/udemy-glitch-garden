@@ -10,7 +10,7 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
-        healthSystem.healthHasChanged = OnHealthChange;
+        healthSystem.healthHasChangedList.Add( OnHealthChange);
         OnHealthChange();
     }
 

@@ -240,6 +240,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Haxe Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4333332053864581658, guid: 01be68bffa87e2f47a0f91437c1c82d1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4333332053864581659, guid: 01be68bffa87e2f47a0f91437c1c82d1,
         type: 3}
       propertyPath: m_Sprite

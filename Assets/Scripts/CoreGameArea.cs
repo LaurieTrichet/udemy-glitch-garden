@@ -29,11 +29,9 @@ public class CoreGameArea : MonoBehaviour
     private Vector3 GetFormattedPosition(Vector3 position)
     {
         var localMousePosition = Camera.main.ScreenToWorldPoint(position);
-        Debug.Log(localMousePosition);
         var x = Mathf.RoundToInt(localMousePosition.x) ;
         var y = Mathf.RoundToInt(localMousePosition.y) ;
         localMousePosition = new Vector3(x, y, 0);
-        Debug.Log(localMousePosition);
         return localMousePosition;
     }
 }
