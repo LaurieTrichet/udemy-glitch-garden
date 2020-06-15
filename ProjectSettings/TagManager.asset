@@ -9,6 +9,7 @@ TagManager:
   - 3
   - 4
   - 5
+  - Jumpable
   layers:
   - Default
   - TransparentFX

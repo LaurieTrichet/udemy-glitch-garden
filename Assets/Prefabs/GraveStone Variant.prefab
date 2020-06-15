@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GraveStone Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1565656312411777554, guid: 226605bbbd216c94d9107b80e431e7a9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Jumpable
+      objectReference: {fileID: 0}
     - target: {fileID: 3382804888101901806, guid: 226605bbbd216c94d9107b80e431e7a9,
         type: 3}
       propertyPath: m_Sprite

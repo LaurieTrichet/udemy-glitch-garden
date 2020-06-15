@@ -1,25 +1,30 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
     [Range(0.1f, 3.0f)]
-    float speed = 0.0f;
+    [SerializeField] float speed = 0.0f;
 
     [SerializeField] AudioClip deathSFX = null;
     [SerializeField] GameObject deathVFXPrefab = null;
-    private Animator animator = null;
+    protected Animator animator = null;
     [SerializeField] int damage = 100;
     [SerializeField] int delayBetweenAttacks = 1;
     protected float currentSpeed = 1;
 
-    private HealthSystem healthSystem = null;
-    private HealthSystem defenderHealth = null;
+    protected HealthSystem healthSystem = null;
+    protected HealthSystem defenderHealth = null;
 
-    private Coroutine attackingCoroutine = null;
+    protected Coroutine attackingCoroutine = null;
+
+    public float Speed { get => speed; 
+        set {
+            speed = value;
+            currentSpeed = value;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +40,7 @@ public class Attacker : MonoBehaviour
         transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
     }
 
-    void SetMovementSpeed(float value)
+    protected void SetMovementSpeed(float value)
     {
         currentSpeed = value;
     }
@@ -61,16 +66,21 @@ public class Attacker : MonoBehaviour
     }
 
 
-    protected void CheckDefender(GameObject other)
+    protected virtual void CheckDefender(GameObject other)
     {
         var defender = other.GetComponent<Defender>();
         if (defender)
         {
-            SetAttacking();
-            defenderHealth = defender.GetComponent<HealthSystem>();
-            defenderHealth.hasDiedList.Add(DefenderHasDied);
-            attackingCoroutine = StartCoroutine(AttackCoroutine(defenderHealth));
+            StartAttacking(defender);
         }
+    }
+
+    protected void StartAttacking(Defender defender)
+    {
+        SetAttacking();
+        defenderHealth = defender.GetComponent<HealthSystem>();
+        defenderHealth.hasDiedList.Add(DefenderHasDied);
+        attackingCoroutine = StartCoroutine(AttackCoroutine(defenderHealth));
     }
 
     protected void SetAttacking()
