@@ -108,5 +108,6 @@ PrefabInstance:
       propertyPath: cost
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 719059715342810121, guid: 226605bbbd216c94d9107b80e431e7a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 226605bbbd216c94d9107b80e431e7a9, type: 3}
