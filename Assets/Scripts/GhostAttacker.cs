@@ -18,11 +18,12 @@ public class GhostAttacker : Attacker
     void Ghost()
     {
         animator.SetTrigger(ghostTrigger);
+        animator.ResetTrigger(unghostTrigger);
     }
 
     protected override void DidPassDefender(GameObject other)
     {
-        //UnGhost(other);
+        UnGhost(other);
     }
 
 
