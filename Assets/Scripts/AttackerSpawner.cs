@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
-
 public class AttackerSpawner : MonoBehaviour
 {
-    [SerializeField] int Min = 1;
+    [SerializeField] int Min = 3;
     [SerializeField] int Max = 5;
     [SerializeField] bool shouldSpawn = false;
 
-    [SerializeField] GameObject prefab = null;
+    [SerializeField] GameObject[] prefabs = null;
     [SerializeField] int line = 0;
 
     public int Line { get => line; set => line = value; }
@@ -24,6 +22,8 @@ public class AttackerSpawner : MonoBehaviour
 
     private void Spawn()
     {
+        var prefabIndex = UnityEngine.Random.Range(0, prefabs.Length -1);
+        var prefab = prefabs[prefabIndex];
         var attacker = Instantiate(prefab, transform.position, transform.rotation, transform);
         attacker.tag = line.ToString() ; 
     }
