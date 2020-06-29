@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f87fe5201ef714f99aecf854d5e4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 1
   deathSFX: {fileID: 8300000, guid: 21ed8aaffb30ddf448fad35189190797, type: 3}
   deathVFXPrefab: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5,
     type: 3}
@@ -60,7 +60,7 @@ PrefabInstance:
     - target: {fileID: 2017484490050635605, guid: f07d66ebbbe4fb644aa6ca20e68d9c0f,
         type: 3}
       propertyPath: m_Name
-      value: Fox Variant
+      value: Fox
       objectReference: {fileID: 0}
     - target: {fileID: 2017484490050635608, guid: f07d66ebbbe4fb644aa6ca20e68d9c0f,
         type: 3}
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 2017484490050635610, guid: f07d66ebbbe4fb644aa6ca20e68d9c0f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7.67
       objectReference: {fileID: 0}
     - target: {fileID: 2017484490050635610, guid: f07d66ebbbe4fb644aa6ca20e68d9c0f,
         type: 3}

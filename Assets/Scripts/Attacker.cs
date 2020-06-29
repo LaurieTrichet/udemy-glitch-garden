@@ -65,7 +65,6 @@ public class Attacker : MonoBehaviour
         CheckDefender(other);
     }
 
-
     protected virtual void CheckDefender(GameObject other)
     {
         var defender = other.GetComponent<Defender>();
@@ -73,6 +72,17 @@ public class Attacker : MonoBehaviour
         {
             StartAttacking(defender);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var other = collision.gameObject;
+        DidPassDefender(other);
+    }
+
+    protected virtual void DidPassDefender(GameObject other)
+    {
+        //DO NOTHING
     }
 
     protected void StartAttacking(Defender defender)
