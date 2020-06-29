@@ -6,6 +6,7 @@ public class GhostAttacker : Attacker
     private const string unghostTrigger = "shouldUnGhost";
     private const string ghostTrigger = "shouldGhost";
 
+
     protected override void CheckDefender(GameObject other)
     {
         var defender = other.GetComponent<Defender>();
