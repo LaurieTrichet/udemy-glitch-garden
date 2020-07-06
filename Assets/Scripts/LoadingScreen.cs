@@ -32,9 +32,16 @@ public class LoadingScreen : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(currentSceneIndex+1);
+        var nextIndex = currentSceneIndex + 1;
+        if (nextIndex <= SceneManager.sceneCount)
+        {
+            SceneManager.LoadScene(nextIndex);
+        }
+        else
+        {
+            Debug.Log("no more levels");
+        }
     }
-
 
     public void LoadGameOver()
     {

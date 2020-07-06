@@ -8,10 +8,16 @@ public class AttackerSpawner : MonoBehaviour
 
     [SerializeField] GameObject[] prefabs = null;
     [SerializeField] int line = 0;
+    private Coroutine spawningCoroutine;
 
     public int Line { get => line; set => line = value; }
 
-    IEnumerator Start()
+    private void Start()
+    {
+        spawningCoroutine = StartCoroutine(StartSpawning());
+    }
+
+    IEnumerator StartSpawning()
     {
         while (shouldSpawn)
         {
@@ -28,4 +34,8 @@ public class AttackerSpawner : MonoBehaviour
         attacker.tag = line.ToString() ; 
     }
 
+    public void StopSpawning()
+    {
+        StopCoroutine(spawningCoroutine);
+    }
 }
