@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -43,15 +44,21 @@ public class LoadingScreen : MonoBehaviour
         }
     }
 
-    public void LoadGameOver()
-    {
-        StartCoroutine(LoadAssetCoroutineForIndex(1));
-    }
 
     IEnumerator LoadAssetCoroutineForIndex(int index)
     {
         yield return new WaitForSecondsRealtime(2.0f);
         SceneManager.LoadScene( index);
+    }
+
+    internal void RestartLevel()
+    {
+        StartCoroutine(LoadAssetCoroutineForIndex(currentSceneIndex));
+    }
+
+    internal void GoToMenu()
+    {
+        StartCoroutine(LoadAssetCoroutineForIndex(1));
     }
 }
  

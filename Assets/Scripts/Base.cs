@@ -8,27 +8,19 @@ public class Base : MonoBehaviour
 {
 
     private HealthSystem healthSystem = null;
-    [SerializeField] LoadingScreen loadingScreen = null;
+    [SerializeField] LevelController levelController = null;
     // Start is called before the first frame update
     void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
-        healthSystem.hasDiedList.Add(loadingScreen.LoadGameOver);
+        levelController = FindObjectOfType<LevelController>();
+        healthSystem.hasDiedList.Add(OnPlayerDidLoose);
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    var other = collision.gameObject;
-    //    TakeDamage(other);
-    //}
+    private void OnPlayerDidLoose()
+    {
+        healthSystem.enabled = false;
+        levelController.OnPlayerDidLoose();
+    }
 
-    //private void TakeDamage(GameObject other)
-    //{
-    //    var attacker = other.GetComponent<Attacker>();
-    //    if (attacker)
-    //    {
-    //        var damage = attacker.Damage;
-    //        healthSystem.HandleHit(damage);
-    //    }
-    //}
 }

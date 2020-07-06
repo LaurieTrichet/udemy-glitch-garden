@@ -16,12 +16,14 @@ public class LevelController : MonoBehaviour
     bool isObservingEnemies = false;
     private Coroutine onEnemiesDeadCoroutine;
     private AttackerSpawner[] attackerSpawners;
-
+    private DefenderSpawner defenderSpawner = null;
+    [SerializeField] GameObject loosePanel = null;
 
     void Start()
     {
         gameTimer.HasTerminated = OnTimerTerminated;
         attackerSpawners = FindObjectsOfType<AttackerSpawner>();
+        defenderSpawner = FindObjectsOfType<DefenderSpawner>().First();
         winSFXSource = GetComponent<AudioSource>();
     }
 
@@ -59,5 +61,43 @@ public class LevelController : MonoBehaviour
         loadingScreen.LoadNextScene();
         StopCoroutine(onEnemiesDeadCoroutine);
     }
-    
+
+    public void OnPlayerDidLoose()
+    {
+        defenderSpawner.SetDefenderPrefab(null);
+        defenderSpawner.enabled = false;
+        loosePanel.SetActive(true);
+    }
+
+    public void OnRestartLevel()
+    {
+        StopLevel();
+        loadingScreen.RestartLevel();
+    }
+
+    public void OnGoToMainMenu()
+    {
+        StopLevel();
+        loadingScreen.GoToMenu();
+    }
+
+    private void StopLevel()
+    {
+        StopLookingForEnemies();
+        StopSpawning();
+        CancelCoroutines();
+    }
+
+    private void StopLookingForEnemies()
+    {
+        isObservingEnemies = false;
+    }
+
+    private void CancelCoroutines()
+    {
+        if (onEnemiesDeadCoroutine != null)
+        {
+            StopCoroutine(onEnemiesDeadCoroutine);
+        }
+    }
 }

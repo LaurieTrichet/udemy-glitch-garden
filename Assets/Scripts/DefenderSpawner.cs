@@ -6,22 +6,14 @@ using UnityEngine;
 public class DefenderSpawner : MonoBehaviour
 {
 
-    [SerializeField] GameObject defenderPrefab = null;
+    private GameObject defenderPrefab = null;
     [SerializeField] StarDisplay starDisplay = null;
     private GameObject[,] grid = new GameObject[6, 5];
 
-    void Start()
-    {
-    }
 
     public void SetDefenderPrefab(GameObject gameObject)
     {
         defenderPrefab = gameObject;
-    }
-
-    public int GetCostForDefender()
-    {
-        return defenderPrefab.GetComponent<Defender>().Cost;
     }
 
     public void SpawnDefender(Vector3 position)
@@ -42,5 +34,9 @@ public class DefenderSpawner : MonoBehaviour
         }
     }
 
-    
+    private int GetCostForDefender()
+    {
+        return defenderPrefab.GetComponent<Defender>().Cost;
+    }
+
 }
