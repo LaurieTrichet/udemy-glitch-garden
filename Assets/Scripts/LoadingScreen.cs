@@ -60,5 +60,15 @@ public class LoadingScreen : MonoBehaviour
     {
         StartCoroutine(LoadAssetCoroutineForIndex(1));
     }
+
+    public void GoToFirstLevel()
+    {
+        StartCoroutine(LoadAssetCoroutineForIndex(2));
+    }    
+    
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
  
