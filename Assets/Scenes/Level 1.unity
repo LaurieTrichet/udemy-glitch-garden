@@ -301,6 +301,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14cf221db0913d44a988bc2dad83f227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &2044545590 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4917046376987201274, guid: c14b05a985d80df4cbc9f7bec0c53a4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4917046376336770252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2079363871 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7276180039341366967, guid: b2a0aed50cf121a4f95c4cd1e7d5cb17,
@@ -1017,6 +1023,21 @@ PrefabInstance:
       propertyPath: loosePanel
       value: 
       objectReference: {fileID: 1223676786}
+    - target: {fileID: 4917046376987201273, guid: c14b05a985d80df4cbc9f7bec0c53a4e,
+        type: 3}
+      propertyPath: winSFXSource
+      value: 
+      objectReference: {fileID: 2044545590}
+    - target: {fileID: 4917046376987201273, guid: c14b05a985d80df4cbc9f7bec0c53a4e,
+        type: 3}
+      propertyPath: winSFXClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8278be28866620246b83d7e2099332f2, type: 3}
+    - target: {fileID: 4917046376987201273, guid: c14b05a985d80df4cbc9f7bec0c53a4e,
+        type: 3}
+      propertyPath: musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7baa86622a531c54aacf71ed5f19344e, type: 3}
     - target: {fileID: 4917046376987201279, guid: c14b05a985d80df4cbc9f7bec0c53a4e,
         type: 3}
       propertyPath: m_Name

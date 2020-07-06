@@ -11,7 +11,10 @@ public class LevelController : MonoBehaviour
     [SerializeField] GameObject spawnerContainer = null;
 
     [SerializeField] LoadingScreen loadingScreen = null;
-    AudioSource winSFXSource = null;
+    AudioSource audioSource = null;
+    [SerializeField] AudioClip musicClip = null;
+    [SerializeField] AudioClip winSFXClip = null;
+ 
     [SerializeField] TMPro.TMP_Text winText = null;
     bool isObservingEnemies = false;
     private Coroutine onEnemiesDeadCoroutine;
@@ -24,7 +27,10 @@ public class LevelController : MonoBehaviour
         gameTimer.HasTerminated = OnTimerTerminated;
         attackerSpawners = FindObjectsOfType<AttackerSpawner>();
         defenderSpawner = FindObjectsOfType<DefenderSpawner>().First();
-        winSFXSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = musicClip;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     void OnTimerTerminated()
@@ -55,8 +61,11 @@ public class LevelController : MonoBehaviour
 
     IEnumerator OnEnemiesDead()
     {
+        StopLevel();
         winText.enabled = true;
-        winSFXSource.Play();
+        audioSource.Stop();
+        audioSource.loop = false;
+        audioSource.PlayOneShot(winSFXClip);
         yield return new WaitForSeconds(5);
         loadingScreen.LoadNextScene();
         StopCoroutine(onEnemiesDeadCoroutine);
@@ -64,14 +73,13 @@ public class LevelController : MonoBehaviour
 
     public void OnPlayerDidLoose()
     {
-        defenderSpawner.SetDefenderPrefab(null);
-        defenderSpawner.enabled = false;
+        StopLevel();
+
         loosePanel.SetActive(true);
     }
 
     public void OnRestartLevel()
     {
-        StopLevel();
         loadingScreen.RestartLevel();
     }
 
@@ -83,6 +91,8 @@ public class LevelController : MonoBehaviour
 
     private void StopLevel()
     {
+        defenderSpawner.SetDefenderPrefab(null);
+        defenderSpawner.enabled = false;
         StopLookingForEnemies();
         StopSpawning();
         CancelCoroutines();
