@@ -25,6 +25,8 @@ public class Attacker : MonoBehaviour
         }
     }
 
+    public int Damage { get => damage; set => damage = value; }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -34,5 +34,17 @@ public class LoadingScreen : MonoBehaviour
     {
         SceneManager.LoadScene(currentSceneIndex+1);
     }
+
+
+    public void LoadGameOver()
+    {
+        StartCoroutine(LoadAssetCoroutineForIndex(1));
+    }
+
+    IEnumerator LoadAssetCoroutineForIndex(int index)
+    {
+        yield return new WaitForSecondsRealtime(2.0f);
+        SceneManager.LoadScene( index);
+    }
 }
  
