@@ -56,7 +56,7 @@ public class LoadingScreen : MonoBehaviour
         StartCoroutine(LoadAssetCoroutineForIndex(currentSceneIndex));
     }
 
-    internal void GoToMenu()
+    public void GoToMenu()
     {
         StartCoroutine(LoadAssetCoroutineForIndex(1));
     }
@@ -64,7 +64,13 @@ public class LoadingScreen : MonoBehaviour
     public void GoToFirstLevel()
     {
         StartCoroutine(LoadAssetCoroutineForIndex(2));
-    }    
+    }       
+    
+    public void GoToSettings()
+    {
+        SceneManager.LoadScene(3);
+    }      
+   
     
     public void ExitGame()
     {
