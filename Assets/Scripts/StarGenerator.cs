@@ -6,22 +6,23 @@ public class StarGenerator : MonoBehaviour
 {
     private StarDisplay starDisplay = null;
     [SerializeField] int resource = 2;
-
+    private int maxDifficulty = 6;
+    private SettingsController settingsController = null;
     
     // Start is called before the first frame update
     void Start()
     {
+
+        settingsController = FindObjectOfType<SettingsController>();
         starDisplay = FindObjectOfType<StarDisplay>();
+        var difficulty = settingsController.GetDifficulty();
+        var generatedResources = maxDifficulty - Mathf.RoundToInt(difficulty);
+        resource = generatedResources;
     }
 
     public void Generate()
     {
+        Debug.Log("add resources " + resource.ToString());
         starDisplay.Add(resource);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

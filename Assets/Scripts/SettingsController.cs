@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
+    private const float defaultVolume = 0.5f;
+    private const float defaultDifficulty = 1f;
 
     public enum SettingKeys
     {
@@ -40,10 +42,10 @@ public class SettingsController : MonoBehaviour
 
     public float GetVolume()
     {
-        return PlayerPrefs.GetFloat($"{SettingKeys.Volume}");
+        return PlayerPrefs.GetFloat($"{SettingKeys.Volume}", defaultVolume);
     }
     public float GetDifficulty()
     {
-        return PlayerPrefs.GetFloat($"{SettingKeys.Difficulty}");
+        return PlayerPrefs.GetFloat($"{SettingKeys.Difficulty}", defaultDifficulty);
     }
 }
