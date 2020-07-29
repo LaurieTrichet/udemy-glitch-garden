@@ -22,14 +22,17 @@ public class LevelController : MonoBehaviour
     private DefenderSpawner defenderSpawner = null;
     [SerializeField] GameObject loosePanel = null;
 
+    private SettingsController settingsController = null;
     void Start()
     {
+        settingsController = GetComponent<SettingsController>();
         gameTimer.HasTerminated = OnTimerTerminated;
         attackerSpawners = FindObjectsOfType<AttackerSpawner>();
         defenderSpawner = FindObjectsOfType<DefenderSpawner>().First();
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = musicClip;
         audioSource.loop = true;
+        audioSource.volume = settingsController.GetVolume();
         audioSource.Play();
     }
 

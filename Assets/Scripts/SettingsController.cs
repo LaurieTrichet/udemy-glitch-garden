@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Dynamic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
@@ -35,5 +36,14 @@ public class SettingsController : MonoBehaviour
         PlayerPrefs.SetFloat($"{SettingKeys.Difficulty}", value);
         var result = PlayerPrefs.GetFloat($"{SettingKeys.Difficulty}");
         Debug.Log($"Difficulty set to {result}");
+    }
+
+    public float GetVolume()
+    {
+        return PlayerPrefs.GetFloat($"{SettingKeys.Volume}");
+    }
+    public float GetDifficulty()
+    {
+        return PlayerPrefs.GetFloat($"{SettingKeys.Difficulty}");
     }
 }
