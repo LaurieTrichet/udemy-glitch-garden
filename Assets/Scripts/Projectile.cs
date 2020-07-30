@@ -22,11 +22,6 @@ public class Projectile : MonoBehaviour
 
     private void HandleCollision(GameObject other)
     {
-        //if ( ! gameObject.CompareTag(other.tag))
-        //{
-        //    return;
-        //}
-
         var health = other.GetComponent<HealthSystem>();
         if (health)
         {

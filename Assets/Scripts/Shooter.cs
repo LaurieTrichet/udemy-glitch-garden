@@ -3,7 +3,7 @@ using System.Linq;
 
 public class Shooter : MonoBehaviour
 {
-
+    private const string Projectiles = "Projectiles";
     [SerializeField] GameObject projectilePrefab = null;
     [SerializeField] GameObject projectileLauncher = null;
     [SerializeField] AttackerSpawner attackerSpawner = null;
@@ -11,10 +11,11 @@ public class Shooter : MonoBehaviour
     [SerializeField] int line = 0;
     private bool shouldShoot = false;
 
-
+    private GameObject projectileParent = null;
     void Start()
     {
         animator = GetComponent<Animator>();
+        projectileParent = GameObject.Find(Projectiles);
         SetAttackerSpawmer();
     }
 
@@ -30,7 +31,7 @@ public class Shooter : MonoBehaviour
     {
         if (shouldShoot)
         {
-            var projectile = Instantiate(projectilePrefab, projectileLauncher.transform.position, projectileLauncher.transform.rotation);
+            var projectile = Instantiate(projectilePrefab, projectileLauncher.transform.position, projectileLauncher.transform.rotation, projectileParent.transform);
             projectile.tag = line.ToString();
         }
     }

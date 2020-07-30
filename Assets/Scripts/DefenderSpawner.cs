@@ -1,15 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DefenderSpawner : MonoBehaviour
 {
-
+    private const string Defenders = "Defenders";
     private GameObject defenderPrefab = null;
     [SerializeField] StarDisplay starDisplay = null;
     private GameObject[,] grid = new GameObject[6, 5];
 
+    private GameObject defenderParent = null;
+
+    private void Start()
+    {
+        defenderParent = GameObject.Find(Defenders);
+    }
 
     public void SetDefenderPrefab(GameObject gameObject)
     {
@@ -26,7 +29,7 @@ public class DefenderSpawner : MonoBehaviour
         {
             starDisplay.MakePurchase(cost);
            
-            var defenderGameObject = Instantiate(defenderPrefab, position, transform.rotation);
+            var defenderGameObject = Instantiate(defenderPrefab, position, transform.rotation, defenderParent.transform);
             var defender = defenderGameObject.GetComponent<Defender>();
             defender.Line = Mathf.RoundToInt(position.y)+1;
 

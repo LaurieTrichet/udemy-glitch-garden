@@ -22,7 +22,6 @@ public class StarGenerator : MonoBehaviour
 
     public void Generate()
     {
-        Debug.Log("add resources " + resource.ToString());
         starDisplay.Add(resource);
     }
 }

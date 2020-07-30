@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
+    private const string VFXParentKey = "VFXParent";
     [Range(0.1f, 3.0f)]
     [SerializeField] float speed = 0.0f;
 
@@ -18,6 +19,8 @@ public class Attacker : MonoBehaviour
 
     protected Coroutine attackingCoroutine = null;
 
+    private GameObject VFXParent = null;
+
     public float Speed { get => speed; 
         set {
             speed = value;
@@ -31,6 +34,7 @@ public class Attacker : MonoBehaviour
     void Start()
     {
         currentSpeed = speed;
+        VFXParent = GameObject.Find(VFXParentKey);
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.hasDiedList.Add(OnHasDied);
         animator = GetComponent<Animator>();
@@ -56,7 +60,7 @@ public class Attacker : MonoBehaviour
             defenderHealth.hasDiedList.Remove(DefenderHasDied);
         }
         AudioSource.PlayClipAtPoint(deathSFX, gameObject.transform.position);
-        var vfx = Instantiate(deathVFXPrefab, transform.position, transform.rotation);
+        var vfx = Instantiate(deathVFXPrefab, transform.position, transform.rotation, VFXParent.transform);
         Destroy(vfx, 2f);
     }
 
@@ -137,7 +141,6 @@ public class Attacker : MonoBehaviour
         var projectile = other.GetComponent<Projectile>();
         if (projectile)
         {
-            Debug.Log("projectile");
             healthSystem.HandleHit(projectile.Damage);
         }
     }
