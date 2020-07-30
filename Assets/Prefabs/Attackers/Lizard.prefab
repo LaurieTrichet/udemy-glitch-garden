@@ -67,10 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8983bd42361ff44b10cb4e1a1ddfd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   deathSFX: {fileID: 8300000, guid: 21ed8aaffb30ddf448fad35189190797, type: 3}
   deathVFXPrefab: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5,
     type: 3}
-  damage: 10
+  damage: 25
   delayBetweenAttacks: 1
 --- !u!70 &459591265
 CapsuleCollider2D:
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f21c89065dabe498dae79bff0f7038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
 --- !u!50 &1655811531308909924
 Rigidbody2D:
   serializedVersion: 4

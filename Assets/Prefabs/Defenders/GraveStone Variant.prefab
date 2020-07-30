@@ -27,6 +27,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.8035863
       objectReference: {fileID: 0}
+    - target: {fileID: 702606370380560795, guid: 226605bbbd216c94d9107b80e431e7a9,
+        type: 3}
+      propertyPath: health
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1565656312411777551, guid: 226605bbbd216c94d9107b80e431e7a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -126,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 5386315349815901575, guid: 226605bbbd216c94d9107b80e431e7a9,
         type: 3}
       propertyPath: cost
-      value: 10
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 719059715342810121, guid: 226605bbbd216c94d9107b80e431e7a9, type: 3}

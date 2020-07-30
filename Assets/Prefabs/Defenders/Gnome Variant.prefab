@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2882109461414854528, guid: 4930c245dcf5e0d40a812d49a85e00a4,
         type: 3}
       propertyPath: cost
-      value: 15
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4815156383308170631, guid: 4930c245dcf5e0d40a812d49a85e00a4,
         type: 3}
@@ -54,6 +54,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3059895349049171178, guid: deaf08687e14a8d46ace88e469b0605b,
         type: 3}
+    - target: {fileID: 7277657329638292380, guid: 4930c245dcf5e0d40a812d49a85e00a4,
+        type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8684367332971702280, guid: 4930c245dcf5e0d40a812d49a85e00a4,
         type: 3}
       propertyPath: m_LocalPosition.x
